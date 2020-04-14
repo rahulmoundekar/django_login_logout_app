@@ -1,0 +1,46 @@
+{% extends 'utilities/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- End of Topbar -->
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">User Details</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MOBILE</th>
+                        <th>EMAIL</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MOBILE</th>
+                        <th>EMAIL</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {%for loginUser in loginUsers%}
+                    <tr>
+                        <td>{{loginUser.pk}}</td>
+                        <td>{{loginUser.name}}</td>
+                        <td>{{loginUser.mobile}}</td>
+                        <td>{{loginUser.user}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
